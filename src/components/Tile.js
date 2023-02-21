@@ -9,11 +9,11 @@ export default function Tile(props) {
             <img className='tileImages' src={fruit.src} alt={fruit.alt}></img>
             <p>{fruit.name}</p>
             <span>
-                <button data={index} id='p' onClick={increment}>+</button>
+                <button className='incButtons' data={index} id='m' onClick={increment}>-</button>
                 <a>{fruit.count}</a>
-                <button data={index} id='m' onClick={increment}>-</button>
+                <button className='incButtons' data={index} id='p' onClick={increment}>+</button>
             </span>
-            <button>Add to cart</button>
+            { fruit.count > 0 ? <button className='cartButton'>Add to cart</button> : null}
         </div>
     );
 }

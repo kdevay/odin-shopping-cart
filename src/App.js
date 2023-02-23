@@ -1,6 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
-import Tile from './components/Tile.js';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Cart from "./components/Cart.js"
+import Shop from "./components/Shop.js"
+import Home from "./components/Home.js"
+import Error from './components/Error.js'
 import watermelon from './froot/watermelon.jpg';
 import banana from './froot/banana.png';
 import papaya from './froot/papaya.png';
@@ -8,73 +12,71 @@ import apple from './froot/apple.png';
 import mango from './froot/mango.png';
 import kiwi from './froot/kiwi.png';
 import cart from './froot/cart.png';
-import uniqid from 'uniqid';
 
+export default function App() {
+  const [cartItems, setCartItems] = useState([
+    {name: 'WATERMELON', cost: 10, src: watermelon, alt: 'A whole watermelon speckled with drops of water', count: 0},
+    {name: 'BANANA', cost: 4, src: banana, alt: 'A bunch of bananas', count: 0},
+    {name: 'PAPAYA', cost: 5, src: papaya, alt: 'A sliced papaya', count: 0},
+    {name: 'APPLE', cost: 2, src: apple, alt: 'An apple', count: 0},
+    {name: 'MANGO', cost: 3, src: mango, alt: 'A whole mango', count: 0},
+    {name: 'KIWI', cost: 1, src: kiwi, alt: 'A sliced kiwi', count: 0}
+]);
 
-function App() {
-  const [fruits, setFruits] = useState(populateFruit());
+  const updateCartItems = (index, count) => {
+    if (index === 'all'){
+      setCartItems(count);
+      return;
+    }
+    let clone = [...cartItems];
+    clone[index].count = count;
+    setCartItems(clone);
+  };
+  
   const [cartCount, setCartCount] = useState(0);
 
-  const incrementFruit = (e) => {
-    let clone = [...fruits];
-    let i = e.target.getAttribute('data');
-    if (e.target.id === 'm'){
-      if (clone[i].count - 1 < 0) return;
-      clone[i].count --;
-      setCartCount(cartCount - 1);
-    } else {
-      clone[i].count++;
-      setCartCount(cartCount + 1);
-    }
-    setFruits(clone);
-  }
+  useEffect(() =>{
+    let num = 0;
+    cartItems.forEach( item => {
+      num += item.count;
+    });
+    setCartCount(num);
+  }, [cartItems]);
 
   return (
-    <div className="App"> 
-      {cartCount > 0 ? <div className='cartCount'>{cartCount}</div> : null}
+    <Router>
+      <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
       <div className='nav'>
-        <span>
-          <a className='heading red'>f</a>
-          <a className='heading yellow'>r</a>
-          <a className='heading blue'>o</a>
-          <a className='heading purple'>o</a>
-          <a className='heading green'>t</a>
-        </span>
-        <div className='cartDiv'>
-          <img className='cart' src={cart}></img>
+            <span id='logo'>
+              <h1 className='heading red'>f</h1>
+              <h1 className='heading yellow'>r</h1>
+              <h1 className='heading blue'>o</h1>
+              <h1 className='heading purple'>o</h1>
+              <h1 className='heading green'>t</h1>
+            </span>
+            <div className='leftNav'>
+                <Link to={'/shop'} className='navLink purpHov'>shop</Link>
+                <Link to={'/'} className='navLink greenHov'>home</Link>
+                <div className='cartDiv'>
+                    <Link to={'/cart'}>
+                        <img className='cart' src={cart} alt='Shopping cart icon'></img>
+                    </Link>
+                </div>
+            </div>
         </div>
-      </div>
-      <div id='grid'>
-        {
-          fruits.map((fruit, index) => {
-            return (
-              <Tile 
-                index={index}
-                fruit={fruit}
-                key={fruit.key}
-                increment={incrementFruit}>
-              </Tile>
-            );
-          })
-        }
-      </div>
-    </div>
-  );
-}
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} updateCartItems={updateCartItems} />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </Router>
+  )
 
-function populateFruit() {
-  return [
-    {name: 'WATERMELON', src: watermelon, alt: 'A whole watermelon speckled with drops of water', count: 0, key: uniqid()},
-    {name: 'BANANA', src: banana, alt: 'A bunch of bananas', count: 0, key: uniqid()},
-    {name: 'PAPAYA', src: papaya, alt: 'A sliced papaya', count: 0, key: uniqid()},
-    {name: 'APPLE', src: apple, alt: 'An apple', count: 0, key: uniqid()},
-    {name: 'MANGO', src: mango, alt: 'A whole mango', count: 0, key: uniqid()},
-    {name: 'KIWI', src: kiwi, alt: 'A sliced kiwi', count: 0, key: uniqid()}
-  ]
 }
 
 
-export default App;
+
 
 
 

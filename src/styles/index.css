@@ -78,19 +78,19 @@ button:hover{
     font-weight: 500;
 }
 .red{
-    color:red;
+    color:#ff0000;
 }
 .yellow{
-    color:#f9ab00
+    color:#f9ab00;
 }
 .blue{
-    color:blue;
+    color:#0000ff;
 }
 .purple{
-    color:purple;
+    color:#800080;
 }
 .green{
-    color:green;
+    color:#008000;
 }
 
 /* Shop */

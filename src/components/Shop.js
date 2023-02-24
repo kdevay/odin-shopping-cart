@@ -26,6 +26,14 @@ export default function Shop(props) {
         setFruits(clone);
     }
 
+    const resetFruits = () => {
+        let clone = [...fruits];
+        clone.forEach(fruit => {
+            fruit.count = 0;
+        });
+        setFruits(clone);
+    }
+
     const addToCart = (e) => {
         let clone = [...fruits];
         let i = e.target.getAttribute('data');
@@ -42,6 +50,7 @@ export default function Shop(props) {
                     index={index}
                     fruit={fruit}
                     key={fruit.key}
+                    resetFruits={resetFruits}
                     addToCart={addToCart}
                     updateCount={updateCount}>
                 </Tile>

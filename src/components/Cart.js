@@ -1,11 +1,13 @@
 import React from 'react';
 import uniqid from 'uniqid';
+import { useNavigate } from "react-router-dom";
+import background from '../froot/background.png';
 
 export default function Cart(props){
     const {updateCartItems, resetFruits, cartItems} = props;
-
     const isEmpty = checkIfCartIsEmpty(cartItems);
-
+    const navigate = useNavigate();
+ 
     const clearCart = () => {
         console.log('clearing cart');
         let clone = [...cartItems];
@@ -23,19 +25,28 @@ export default function Cart(props){
         })
         return total;
     }
+
     return isEmpty ? 
         (
-            <div className='cartContainer'>
-                <h1>cart is empty</h1>
+            <div>
+                <div className='topText'>
+                    <h1 id='well'>Empty.</h1>
+                    <h4>nothing to see here</h4>
+                </div>
+                <div id='background'>
+                    <img className='background' src={background} alt='colorful squiggly lines'></img>
+                </div>
             </div>
         ):
         (
-            <div className='cartContainer'>
+            <div className='centered'>
                 <table id='cart'>
                     <thead>
                         <tr>
                             <th className='wideCol'>product</th>
-                            <th className='thinCol'>cost per unit</th>
+                            <th className='costCol'>$</th>
+                            <th className='xCol'></th>
+                            <th className='countCol'>#</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,12 +58,16 @@ export default function Cart(props){
                                     <tr key={uniqid()}>
                                         {/* Tile {addToCart, updateCount, fruit, index, page} = props; */}
                                         <td className='wideCol'>
-                                            <div className="smallTile"> 
-                                                <img className='smallTileImages' src={item.src} alt={item.alt}></img>
+                                            <div className='cartItem'>
+                                                <div className="smallTile"> 
+                                                    <img className='smallTileImages' src={item.src} alt={item.alt}></img>
+                                                </div>
                                                 <p>{item.name}</p>
                                             </div>
                                         </td>
-                                        <td className='thinCol'>{item.cost}</td>
+                                        <td className='costCol'>{item.cost}</td>
+                                        <td className='xCol'>x</td>
+                                        <td className='countCol'>{item.count}</td>
                                     </tr>
                                 );
                             })
@@ -60,8 +75,10 @@ export default function Cart(props){
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th className='wideCol'>total:</th>
-                            <th className='thinCol'>{totalCost()}</th>
+                            <th className='wideCol'>TOTAL:</th>
+                            <td className='costCol'>{'$' + totalCost() + '.00'}</td>
+                            <td className='xCol'></td>
+                            <th className='countCol'></th>
                         </tr>
                     </tfoot>
                 </table>

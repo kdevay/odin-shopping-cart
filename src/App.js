@@ -70,6 +70,19 @@ export default function App() {
         <Route path="/cart" element={<Cart cartItems={cartItems} updateCartItems={updateCartItems} />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <div id='footer'>
+        <p>froot © 2023</p>
+        <p className='red'>•</p>
+        <p>powered by Kat </p>
+        <p className='yellow'>•</p>
+        <p>est. 1991</p>
+        <p className='blue'>•</p>
+        <a href='https://github.com/kdevay'>Contact</a>
+        <p className='purple'>•</p>
+        <a href='https://www.youtube.com/watch?v=umFweP6BKoE'>Terms of Use</a>
+        <p className='green'>•</p>
+        <a href='https://www.instagram.com/kateatsgarbage/'>Privacy Policy</a>
+      </div>
     </Router>
   )
 

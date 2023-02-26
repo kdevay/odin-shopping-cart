@@ -86,15 +86,14 @@ body{
 #footer{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
     justify-content: center;
+    width: 80vw;
     font-size: 14px;
-    margin: 8px 24vw;
+    padding: 2px 9.4vw;
 }
-.dot{
-    margin: 0 10px;
+#footer > p, 
+#footer > a{
+    margin: 2px 5px;
 }
 
 /* cart icon */
@@ -155,11 +154,11 @@ body{
 /* Shop */
 #grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 342px));
     grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    justify-items: center;
     align-items: center;
+    justify-items: center;
+    justify-content: center;
     padding: 0px 2vw 10vh 2vw;
 }
 .tile {

@@ -4,6 +4,10 @@
 button:hover{
     cursor: pointer;
 }
+body{
+    position: relative;
+    min-height: 100vh;
+}
 
 .topText{
     margin: 0px;
@@ -73,12 +77,24 @@ button:hover{
     padding: 8px;
     border: 4px solid green;
 }
+
 /* footer */
+#footerDiv{
+    position: absolute;
+    bottom: 16px;
+}
 #footer{
     display: flex;
-    gap: 5px;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin: 8px 24vw;
+}
+.dot{
+    margin: 0 10px;
 }
 
 /* cart icon */
@@ -144,7 +160,7 @@ button:hover{
     gap: 20px;
     justify-items: center;
     align-items: center;
-    padding: 0px 2vw;
+    padding: 0px 2vw 10vh 2vw;
 }
 .tile {
     display: flex;

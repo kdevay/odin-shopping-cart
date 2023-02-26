@@ -1,13 +1,11 @@
 import React from 'react';
 import uniqid from 'uniqid';
-import { useNavigate } from "react-router-dom";
-import background from '../froot/background.png';
+import Page from "./Page.js";
 
 export default function Cart(props){
-    const {updateCartItems, resetFruits, cartItems} = props;
+    const {updateCartItems, resetFruits, cartItems, text} = props;
     const isEmpty = checkIfCartIsEmpty(cartItems);
-    const navigate = useNavigate();
- 
+
     const clearCart = () => {
         console.log('clearing cart');
         let clone = [...cartItems];
@@ -27,17 +25,8 @@ export default function Cart(props){
     }
 
     return isEmpty ? 
-        (
-            <div>
-                <div className='topText'>
-                    <h1 id='well'>Empty.</h1>
-                    <h4>nothing to see here</h4>
-                </div>
-                <div id='background'>
-                    <img className='background' src={background} alt='colorful squiggly lines'></img>
-                </div>
-            </div>
-        ):
+        <Page head={text.head} subHead={text.subHead}/>
+        :
         (
             <div className='centered'>
                 <table id='cart'>

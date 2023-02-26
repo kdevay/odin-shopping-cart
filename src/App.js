@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Cart from "./components/Cart.js"
-import Shop from "./components/Shop.js"
-import Home from "./components/Home.js"
-import Error from './components/Error.js'
+import Logo from "./components/Logo.js";
+import Cart from "./components/Cart.js";
+import Shop from "./components/Shop.js";
+import Page from "./components/Page.js";
+import Footer from "./components/Footer.js";
 import watermelon from './froot/watermelon.jpg';
 import banana from './froot/banana.png';
 import papaya from './froot/papaya.png';
@@ -14,6 +15,11 @@ import kiwi from './froot/kiwi.png';
 import cart from './froot/cart.png';
 
 export default function App() {
+  const text = { 
+    home:{head: 'Welcome.', subHead: 'buy the fruit, eat the fruit, poop the fruit'}, 
+    error:{head: 'Sorry.', subHead: 'this page is not available'},
+    cart:{head: 'Empty.', subHead: 'nothing to see here'}
+  }
   const [cartItems, setCartItems] = useState([
     {name: 'WATERMELON', cost: 10, src: watermelon, alt: 'A whole watermelon speckled with drops of water', count: 0},
     {name: 'BANANA', cost: 4, src: banana, alt: 'A bunch of bananas', count: 0},
@@ -46,71 +52,25 @@ export default function App() {
   return (
     <Router>
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
-      <div className='nav'>
-            <span id='logo'>
-              <h1 className='heading red'>f</h1>
-              <h1 className='heading yellow'>r</h1>
-              <h1 className='heading blue'>o</h1>
-              <h1 className='heading purple'>o</h1>
-              <h1 className='heading green'>t</h1>
-            </span>
+        <div className='nav'>
+            <Logo></Logo>
             <div className='leftNav'>
-                <Link to={'/shop'} className='navLink purpHov'>shop</Link>
-                <Link to={'/'} className='navLink greenHov'>home</Link>
-                <div className='cartDiv'>
-                    <Link to={'/cart'}>
-                        <img className='cart' src={cart} alt='Shopping cart icon'></img>
-                    </Link>
-                </div>
+              <Link to={'/shop'} className='navLink purpHov'>shop</Link>
+              <Link to={'/'} className='navLink greenHov'>home</Link>
+              <div className='cartDiv'>
+                <Link to={'/cart'}>
+                  <img className='cart' src={cart} alt='Shopping cart icon'></img>
+                </Link>
+              </div>
             </div>
-        </div>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} updateCartItems={updateCartItems} />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <div id='footer'>
-        <p>froot © 2023</p>
-        <p className='red'>•</p>
-        <p>powered by Kat </p>
-        <p className='yellow'>•</p>
-        <p>est. 1991</p>
-        <p className='blue'>•</p>
-        <a href='https://github.com/kdevay'>Contact</a>
-        <p className='purple'>•</p>
-        <a href='https://www.youtube.com/watch?v=umFweP6BKoE'>Terms of Use</a>
-        <p className='green'>•</p>
-        <a href='https://www.instagram.com/kateatsgarbage/'>Privacy Policy</a>
-      </div>
+          </div>
+          <Routes>
+            <Route path="/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
+            <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
+            <Route path="/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
+            <Route path="*" element={<Page head={text.error.head} subHead={text.error.subHead}/>} />
+          </Routes>
+          <Footer></Footer>
     </Router>
   )
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 1. homepage -  add a few images or random info, nothing fancy. 
-// 2. shop page - with  product tiles
-// 3. shopping cart - products in cart, subtotal, checkout button
-
-// shopping cart route
-//  - sticky bar displaying the number of items currently in the cart. 
-//  - checkout button next to bar
-
-// tiles 
-//  - image of product 
-//  - increment/decrement buttons to select amount 
-//  - title for each product
-//  - “Add To Cart” button - Once a product is added, the cart (#/$) amount should adjust.

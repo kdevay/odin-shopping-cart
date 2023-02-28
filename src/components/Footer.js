@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer(){
 
     return(
-        <div id='footerDiv'>
+        <div aria-label='footerDiv' id='footerDiv'>
             <div id='footer'>
                 <p>froot © 2023</p>
                 <p className='red dot'>•</p>

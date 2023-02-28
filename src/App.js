@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Logo from "./components/Logo.js";
@@ -52,7 +51,7 @@ export default function App() {
   return (
     <Router>
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
-        <div className='nav'>
+        <div aria-label='nav' className='nav'>
             <Logo></Logo>
             <div className='leftNav'>
               <Link to={'/shop'} className='navLink purpHov'>shop</Link>

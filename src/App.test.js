@@ -5,13 +5,6 @@ import { act } from 'react-dom/test-utils';
 import React from "react"; 
 import App from "./App.js";
 import Footer from "./components/Footer.js";
-import Cart from "./components/Cart.js";
-// import Shop from "./components/Shop.js";
-// import Page from "./components/Page.js";
-// import { RouterProvider, createMemoryRouter } from "react-router-dom";
-// import routesConfig from '../routes';
-// import { waitFor } from "@testing-library/react";
-// import TestComponent from "path-to-test-component";
 
 // app/ (aka home)
 test('renders navbar logo', () => {
@@ -62,19 +55,3 @@ test('renders footer links', () => {
   expect(terms).toBeInTheDocument();
   expect(privacy).toBeInTheDocument();
 });
-
-// test('renders cart', () => {
-//   const { getByRole } = render(<cart />);
-//   const privacy = getByRole("link", { name: 'Privacy Policy' });
-//   expect(privacy).toBeInTheDocument();
-// });
-
-// test("click home goes to /home", async () => {
-//   const router = createMemoryRouter(routesConfig, {
-//     initialEntries: ["/posts"],
-//   });
-
-//   render(<RouterProvider router={router} />);
-
-//   // make assertions, await changes, etc...
-// });

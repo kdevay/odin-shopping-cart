@@ -5,25 +5,6 @@ import { act } from 'react-dom/test-utils';
 import React from "react"; 
 import App from "./App.js";
 
-
-
-// button:
-
-// Name "-":
-// <button
-//   class="incButtons"
-//   data="0"
-//   id="m"
-// />
-
-// Name "+":
-// <button
-//   class="incButtons"
-//   data="0"
-//   id="p"
-// />
-img:
-
 describe("Nav 'Shop' link redirects to proper route", () => {
     it("shop contains all fruit", () => {
         const { getByRole } = render(<App />);

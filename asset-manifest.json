@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/odin-shopping-cart/static/css/main.b5f08b9c.css",
+    "main.js": "/odin-shopping-cart/static/js/main.fde3d799.js",
+    "static/media/papaya.png": "/odin-shopping-cart/static/media/papaya.c6fba529c3a80049f836.png",
+    "static/media/apple.png": "/odin-shopping-cart/static/media/apple.57266f35315b05fda638.png",
+    "static/media/banana.png": "/odin-shopping-cart/static/media/banana.f4ff1d39ec306e87dcf9.png",
+    "static/media/watermelon.jpg": "/odin-shopping-cart/static/media/watermelon.1be40a12f6b361d243df.jpg",
+    "static/media/kiwi.png": "/odin-shopping-cart/static/media/kiwi.ec59efe016662080ab44.png",
+    "static/media/mango.png": "/odin-shopping-cart/static/media/mango.be360d50c632cc68aeed.png",
+    "static/media/background.png": "/odin-shopping-cart/static/media/background.3adcb5cdf75335b5635b.png",
+    "index.html": "/odin-shopping-cart/index.html",
+    "main.b5f08b9c.css.map": "/odin-shopping-cart/static/css/main.b5f08b9c.css.map",
+    "main.fde3d799.js.map": "/odin-shopping-cart/static/js/main.fde3d799.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5f08b9c.css",
+    "static/js/main.fde3d799.js"
+  ]
+}

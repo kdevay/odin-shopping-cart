@@ -16,12 +16,12 @@ export default function Shop(props) {
 
     const updateCount = (e) => {
         let clone = [...fruits];
-        let i = e.target.getAttribute('data');
-        if (e.target.id === 'm'){
-        if (clone[i].count - 1 < 0) return;
-        clone[i].count --;
+        let i = parseInt(e.target.id.substring(1));
+        if (e.target.id[0] === 'm') {
+            if (clone[i].count - 1 < 0) return;
+            clone[i].count --;
         } else {
-        clone[i].count++;
+            clone[i].count++;
         }
         setFruits(clone);
     }

@@ -12,9 +12,9 @@ export default function Tile(props) {
                     <p className='grey'>{'$' + fruit.cost}</p>
                 </div>
                 <span>
-                    <button className='incButtons' data={index} id='m' onClick={updateCount}>-</button>
+                    <button className='incButtons' id={'m' + index} onClick={updateCount}>-</button>
                     <a>{fruit.count}</a>
-                    <button className='incButtons' data={index} id='p' onClick={updateCount}>+</button>
+                    <button className='incButtons' id={'p' + index} onClick={updateCount}>+</button>
                 </span>
                 { fruit.count > 0 ? <button className='cartButton' data={index} onClick={addToCart}>Add to cart</button> : null}
             </div>

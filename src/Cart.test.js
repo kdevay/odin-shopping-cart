@@ -28,75 +28,7 @@ import App from "./App.js";
 //   id="p"
 // />
 
-// Name "-":
-// <button
-//   class="incButtons"
-//   data="1"
-//   id="m"
-// />
 
-// Name "+":
-// <button
-//   class="incButtons"
-//   data="1"
-//   id="p"
-// />
-
-// Name "-":
-// <button
-//   class="incButtons"
-//   data="2"
-//   id="m"
-// />
-
-// Name "+":
-// <button
-//   class="incButtons"
-//   data="2"
-//   id="p"
-// />
-
-// Name "-":
-// <button
-//   class="incButtons"
-//   data="3"
-//   id="m"
-// />
-
-// Name "+":
-// <button
-//   class="incButtons"
-//   data="3"
-//   id="p"
-// />
-
-// Name "-":
-// <button
-//   class="incButtons"
-//   data="4"
-//   id="m"
-// />
-
-// Name "+":
-// <button
-//   class="incButtons"
-//   data="4"
-//   id="p"
-// />
-
-// Name "-":
-// <button
-//   class="incButtons"
-//   data="5"
-//   id="m"
-// />
-
-// Name "+":
-// <button
-//   class="incButtons"
-//   data="5"
-//   id="p"
-// />
 
 describe("Navbar links redirect to proper routes", () => {
     it("shop", () => {

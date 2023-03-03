@@ -48,10 +48,11 @@ export default function App() {
     setCartCount(num);
   }, [cartItems]);
 
-  console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL);
+  
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      {console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL)}
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
         <div aria-label='nav' className='nav'>
             <Logo></Logo>

@@ -49,7 +49,7 @@ export default function App() {
   }, [cartItems]);
 
   return (
-    <Router basename="/odin-shopping-cart">
+    <Router basename={public.env.PUBLIC_URL}>
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
         <div aria-label='nav' className='nav'>
             <Logo></Logo>

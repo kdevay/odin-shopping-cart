@@ -49,7 +49,7 @@ export default function App() {
   }, [cartItems]);
 
   return (
-    <Router>
+    <Router basename="/odin-shopping-cart">
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
         <div aria-label='nav' className='nav'>
             <Logo></Logo>
@@ -64,9 +64,9 @@ export default function App() {
             </div>
           </div>
           <Routes>
-            <Route path="https://kdevay.github.io/odin-shopping-cart/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
-            <Route path="https://kdevay.github.io/odin-shopping-cart/shop" element={<Shop updateCartItems={updateCartItems} />} />
-            <Route path="https://kdevay.github.io/odin-shopping-cart/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
+            <Route path="/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
+            <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
+            <Route path="/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
             <Route path="*" element={<Page head={text.error.head} subHead={text.error.subHead}/>} />
           </Routes>
           <Footer></Footer>

@@ -54,19 +54,19 @@ export default function App() {
         <div aria-label='nav' className='nav'>
             <Logo></Logo>
             <div className='leftNav'>
-              <Link to={'http://kdevay.github.io/odin-shopping-cart/shop'} className='navLink purpHov'>shop</Link>
-              <Link to={'http://kdevay.github.io/odin-shopping-cart/'} className='navLink greenHov'>home</Link>
+              <Link to={'/shop'} className='navLink purpHov'>shop</Link>
+              <Link to={'/'} className='navLink greenHov'>home</Link>
               <div className='cartDiv'>
-                <Link to={'http://kdevay.github.io/odin-shopping-cart/cart'}>
+                <Link to={'/cart'}>
                   <img className='cart' src={cart} alt='Shopping cart icon'></img>
                 </Link>
               </div>
             </div>
           </div>
           <Routes>
-            <Route path="/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
-            <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
-            <Route path="/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
+            <Route path="https://kdevay.github.io/odin-shopping-cart/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
+            <Route path="https://kdevay.github.io/odin-shopping-cart/shop" element={<Shop updateCartItems={updateCartItems} />} />
+            <Route path="https://kdevay.github.io/odin-shopping-cart/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
             <Route path="*" element={<Page head={text.error.head} subHead={text.error.subHead}/>} />
           </Routes>
           <Footer></Footer>

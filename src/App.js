@@ -16,7 +16,7 @@ import cart from './froot/cart.png';
 export default function App() {
   const text = { 
     home:{head: 'Welcome.', subHead: 'buy the fruit, eat the fruit, poop the fruit'}, 
-    error:{head: 'Sorry.', subHead: 'this page is not available'},
+    error:{head: 'Sorry. UWU', subHead: 'this page is not available'},
     cart:{head: 'Empty.', subHead: 'nothing to see here'}
   }
   const [cartItems, setCartItems] = useState([

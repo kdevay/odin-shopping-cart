@@ -54,10 +54,10 @@ export default function App() {
         <div aria-label='nav' className='nav'>
             <Logo></Logo>
             <div className='leftNav'>
-              <Link to={'/shop'} className='navLink purpHov'>shop</Link>
-              <Link to={'/'} className='navLink greenHov'>home</Link>
+              <Link to={'http://kdevay.github.io/odin-shopping-cart/shop'} className='navLink purpHov'>shop</Link>
+              <Link to={'http://kdevay.github.io/odin-shopping-cart/'} className='navLink greenHov'>home</Link>
               <div className='cartDiv'>
-                <Link to={'/cart'}>
+                <Link to={'http://kdevay.github.io/odin-shopping-cart/cart'}>
                   <img className='cart' src={cart} alt='Shopping cart icon'></img>
                 </Link>
               </div>

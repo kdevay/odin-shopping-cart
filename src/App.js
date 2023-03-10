@@ -51,8 +51,7 @@ export default function App() {
   
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      {console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL)}
+    <Router>
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
         <div aria-label='nav' className='nav'>
             <Logo></Logo>

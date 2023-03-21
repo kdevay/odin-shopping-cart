@@ -53,17 +53,17 @@ export default function App() {
   return (
     <Router basename='/odin-shopping-cart'>
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
+      <div className='cartDiv'>
+        <Link to={'/cart'}>
+          <img className='cart' src={cart} alt='Shopping cart icon'></img>
+        </Link>
+      </div>
       <div className='layout'>
         <div aria-label='nav' className='nav'>
           <Logo></Logo>
           <div className='leftNav'>
             <Link to={'/shop'} className='navLink purpHov'>shop</Link>
             <Link to={'/'} className='navLink greenHov'>home</Link>
-            <div className='cartDiv'>
-              <Link to={'/cart'}>
-                <img className='cart' src={cart} alt='Shopping cart icon'></img>
-              </Link>
-            </div>
           </div>
         </div>
         <Routes>

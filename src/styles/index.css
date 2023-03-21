@@ -9,10 +9,6 @@ body{
     min-height: 100vh;
 }
 
-#root{
-    padding: 1vh 2vw 2vh 2vw;
-    width: 94vw;
-}
 .topDiv{
     width: 100%;
     display: flex;
@@ -42,10 +38,12 @@ body{
     overflow: hidden;
 }
 .background {
-    width: 100%;
+    width: 70%;
+    max-width: 1008;
 }
 
 .layout{
+    width: 100vw;
     display: flex;
     gap: 40px;
     flex-direction: column;
@@ -54,7 +52,7 @@ body{
 
 .nav{
     display: flex;
-    margin: 20px 0 20px 20px;
+    margin: -10px 0 20px 0px;
     height: 40px;
     align-items: center;
     justify-content: space-between;
@@ -93,13 +91,13 @@ body{
 #footerDiv{
     position: absolute;
     bottom: 16px;
-    width: 97%;
+    width: 94%;
 }
 #footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 92%;
+    width: 78%;
     font-size: 14px;
     padding: 2px 5%;
 }
@@ -113,6 +111,11 @@ body{
     height: 45px;
     width: 60px;
     float: right;
+    position: relative;
+    z-index: 0;
+    top: 33px;
+    right: 16px;
+    margin: 0px;
 }
 .cart{
     width: 100%;
@@ -133,8 +136,8 @@ body{
     align-items: center;
     position: relative;
     z-index: 10;
-    top: 5px;
-    right: 50px;
+    top: 23px;
+    right: 54.4px;
     margin: 0px;
     float: right;
 }

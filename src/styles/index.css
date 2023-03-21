@@ -9,45 +9,56 @@ body{
     min-height: 100vh;
 }
 
-.topText{
-    margin: 0px;
+#root{
+    padding: 1vh 2vw 2vh 2vw;
+    width: 94vw;
+}
+.topDiv{
+    width: 100%;
     display: flex;
     position: relative;
     z-index: 10;
-    top: 6px;
-    left: 22%;
-    flex-direction: column;
-    align-items: flex-start;
-    /* 
-    top: 50px;
-    left: 2%;
+    top: -42px;
+    left: 0%;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    */
+}
+.topText{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 #well{
     font-size: 60px;
-    margin-bottom: 0px;
+    margin: 0;
 }
 #background{
-    margin-top: -109px;
+    margin-top: -125px;
     display: flex;
-    width: 100vw;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
 }
 .background {
-    width: 97%;
-    height: 87%;
+    width: 100%;
+}
+
+.layout{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav{
     display: flex;
-    margin: 20px;
+    margin: 20px 0 20px 20px;
     height: 40px;
     align-items: center;
     justify-content: space-between;
+    width: 90%;
 }
 #logo{
     display: flex;
@@ -82,14 +93,15 @@ body{
 #footerDiv{
     position: absolute;
     bottom: 16px;
+    width: 97%;
 }
 #footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80vw;
+    width: 92%;
     font-size: 14px;
-    padding: 2px 9.4vw;
+    padding: 2px 5%;
 }
 #footer > p, 
 #footer > a{
@@ -121,8 +133,8 @@ body{
     align-items: center;
     position: relative;
     z-index: 10;
-    top: -12px;
-    right: 33px;
+    top: 5px;
+    right: 50px;
     margin: 0px;
     float: right;
 }
@@ -153,13 +165,14 @@ body{
 
 /* Shop */
 #grid {
+    width: 88%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 342px));
     grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
     align-items: center;
     justify-items: center;
     justify-content: center;
-    padding: 0px 2vw 10vh 2vw;
+    padding: 0 0 50px 0;
 }
 .tile {
     display: flex;
@@ -194,12 +207,11 @@ body{
 }
 
 /* cart */
-.centered{
+.centered{ /* may get rid of this */
     display: flex;
-    width: 100vw;
+    width: 100%;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 #cart{
     width: 70%;

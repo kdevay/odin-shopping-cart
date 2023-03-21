@@ -15,7 +15,7 @@ import cart from './froot/cart.png';
 
 export default function App() {
   const text = { 
-    home:{head: 'Welcome.', subHead: 'buy the fruit, eat the fruit, poop the fruit'}, 
+    home:{head: 'Welcome.', subHead: 'buy the fruit, eat the fruit, be the fruit'}, 
     error:{head: 'Sorry.', subHead: 'this page is not available'},
     cart:{head: 'Empty.', subHead: 'nothing to see here'}
   }
@@ -53,25 +53,27 @@ export default function App() {
   return (
     <Router basename='/odin-shopping-cart'>
       <div className={cartCount > 0 ? 'cartCount' : 'hiddenCount'}>{cartCount}</div>
+      <div className='layout'>
         <div aria-label='nav' className='nav'>
-            <Logo></Logo>
-            <div className='leftNav'>
-              <Link to={'/shop'} className='navLink purpHov'>shop</Link>
-              <Link to={'/'} className='navLink greenHov'>home</Link>
-              <div className='cartDiv'>
-                <Link to={'/cart'}>
-                  <img className='cart' src={cart} alt='Shopping cart icon'></img>
-                </Link>
-              </div>
+          <Logo></Logo>
+          <div className='leftNav'>
+            <Link to={'/shop'} className='navLink purpHov'>shop</Link>
+            <Link to={'/'} className='navLink greenHov'>home</Link>
+            <div className='cartDiv'>
+              <Link to={'/cart'}>
+                <img className='cart' src={cart} alt='Shopping cart icon'></img>
+              </Link>
             </div>
           </div>
-          <Routes>
-            <Route path="/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
-            <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
-            <Route path="/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
-            <Route path="*" element={<Page head={text.error.head} subHead={text.error.subHead}/>} />
-          </Routes>
-          <Footer></Footer>
+        </div>
+        <Routes>
+          <Route path="/" element={<Page head={text.home.head} subHead={text.home.subHead} />}/>
+          <Route path="/shop" element={<Shop updateCartItems={updateCartItems} />} />
+          <Route path="/cart" element={<Cart text={text.cart} cartItems={cartItems} updateCartItems={updateCartItems} />} />
+          <Route path="*" element={<Page head={text.error.head} subHead={text.error.subHead}/>} />
+        </Routes>
+        <Footer></Footer>
+      </div>
     </Router>
   )
 }

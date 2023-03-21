@@ -6,10 +6,13 @@ export default function Page(props){
 
     return(
         <div>
-            <div className='topText'>
-                <h1 id='well'>{head}</h1>
-                <h4>{subHead}</h4>
+            <div className='topDiv'>
+                <div className='topText'>
+                    <h1 id='well'>{head}</h1>
+                    <h4>{subHead}</h4>
+                </div>
             </div>
+
             <div id='background'>
                 <img className='background' src={background} alt='colorful squiggly lines'></img>
             </div>
